@@ -6,14 +6,22 @@
 
 plugins {
     id("minminsweeper.kotlin-application-conventions")
+    id("org.jetbrains.compose") version "1.3.1"
 }
 
 dependencies {
     implementation("org.apache.commons:commons-text")
+    implementation(compose.desktop.currentOs)
     implementation(project(":utilities"))
 }
 
 application {
     // Define the main class for the application.
     mainClass.set("minminsweeper.app.AppKt")
+}
+
+compose.desktop {
+    application {
+        mainClass = "AppKt"
+    }
 }
