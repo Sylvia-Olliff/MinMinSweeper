@@ -6,8 +6,7 @@
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    kotlin("jvm") version "1.8.10"
-    id("org.jetbrains.compose") version "1.3.1"
+    id("org.jetbrains.kotlin.jvm")
 }
 
 repositories {
