@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="MinMinSweeper-build-logic" target="1.8" />
+      <module name="MinMinSweeper-build-logic.main" target="1.8" />
+      <module name="MinMinSweeper-build-logic.test" target="1.8" />
+      <module name="MinMinSweeper.app" target="1.8" />
+      <module name="MinMinSweeper.app.main" target="1.8" />
+      <module name="MinMinSweeper.app.test" target="1.8" />
+      <module name="MinMinSweeper.list" target="1.8" />
+      <module name="MinMinSweeper.list.main" target="1.8" />
+      <module name="MinMinSweeper.list.test" target="1.8" />
+      <module name="MinMinSweeper.utilities" target="1.8" />
+      <module name="MinMinSweeper.utilities.main" target="1.8" />
+      <module name="MinMinSweeper.utilities.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

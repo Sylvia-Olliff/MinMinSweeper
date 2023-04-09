@@ -21,11 +21,11 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "com.minminsweeper.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "KotlinJvmComposeDesktopApplication"
+            targetFormats(TargetFormat.Msi, TargetFormat.Deb)
+            packageName = "MinMinSweeper"
             packageVersion = "1.0.0"
         }
     }
