@@ -1,0 +1,81 @@
+package com.minminsweeper.ui.style
+
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Typography
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
+
+// Number Colors
+private val MinMinSweeperBlue = Color(0xff80b5ff)
+private val MinMinSweeperGreen = Color(0xff80ff80)
+private val MinMinSweeperRed = Color(0xffff9580)
+private val MinMinSweeperPurple = Color(0xffe699ff)
+private val MinMinSweeperOrange = Color(0xffffbf80)
+private val MinMinSweeperYellow = Color(0xffffff80)
+
+// Digits
+private val DigitRedActive = Color(0xffff4d4d)
+
+// Greyscale
+private val VeryLightGray = Color(0xffbdbdbd)
+private val LighterGray = Color(0xff757575)
+private val Gray = Color(0xff424242)
+private val DarkerGray = Color(0xff212121)
+
+object NumberColors {
+    val colors = listOf(
+        MinMinSweeperYellow, MinMinSweeperBlue, MinMinSweeperGreen, MinMinSweeperRed, MinMinSweeperPurple, MinMinSweeperOrange
+    )
+}
+
+val MinMinSweeperColors = darkColorScheme(
+    primary = Gray,
+    onPrimary = DarkerGray,
+    secondary = LighterGray,
+    tertiary = VeryLightGray,
+    background = Gray,
+    surface = Color.White,
+    onSurface = Color.Black,
+    error = Color(0xff5d0909),
+    onError = DigitRedActive
+)
+
+private val MinMinSweeperTypography = Typography(
+    titleSmall = TextStyle(
+        fontSize = 15.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.Monospace,
+        letterSpacing = .5.sp,
+        textAlign = TextAlign.Left
+    ),
+    labelSmall = TextStyle(
+        color = MinMinSweeperColors.onSurface,
+        fontSize = 12.sp,
+        fontWeight = FontWeight.SemiBold,
+        fontFamily = FontFamily.Monospace,
+        letterSpacing = .5.sp,
+        textAlign = TextAlign.Center
+    )
+)
+
+@Composable
+fun MinMinSweeperTheme(
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        colorScheme = MinMinSweeperColors,
+        typography = MinMinSweeperTypography
+    ) {
+        Surface(content = content)
+    }
+}
+
+
+

@@ -1,10 +1,15 @@
 package com.minminsweeper.game.board
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class Cell(
-    private val coord: Pair<Int, Int>,
-    private var isBomb: Boolean,
-    private var digits: Int?,
-    private var isChecked: Boolean
+    val coord: Pair<Int, Int>,
+    val state: CellState = CellState.UNSELECTED,
+    val neighborBombs: Int = 0
 ) {
-    //TODO: Add helper methods for getting/setting status aspects of a cell
+    val isMine: Boolean
+        get() = neighborBombs == -1
+
+
 }
