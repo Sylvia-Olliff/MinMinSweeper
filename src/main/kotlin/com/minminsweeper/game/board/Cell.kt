@@ -10,6 +10,4 @@ data class Cell(
 ) {
     val isMine: Boolean
         get() = neighbourBombs == -1
-
-
 }
