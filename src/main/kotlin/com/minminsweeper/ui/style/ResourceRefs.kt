@@ -54,6 +54,7 @@ const val DIGITAL_TEST_TAG = "digital screen"
 
 // Cell
 val cellSize = 20.dp
+val cellPadding = 3.dp
 const val FLAG_ICON = "flag.svg"
 const val FLAG_DESCRIPTION = "tiny red flag"
 const val MINE_ICON = "mine.svg"
