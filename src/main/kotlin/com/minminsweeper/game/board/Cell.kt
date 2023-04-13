@@ -6,10 +6,10 @@ import androidx.compose.runtime.Immutable
 data class Cell(
     val coord: Pair<Int, Int>,
     val state: CellState = CellState.UNSELECTED,
-    val neighborBombs: Int = 0
+    val neighbourBombs: Int = 0
 ) {
     val isMine: Boolean
-        get() = neighborBombs == -1
+        get() = neighbourBombs == -1
 
 
 }

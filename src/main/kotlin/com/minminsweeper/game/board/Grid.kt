@@ -27,29 +27,29 @@ abstract class Grid(
     abstract fun generateMineField()
 
 
-    protected fun generateNeighborCount(coords: Pair<Int, Int>) {
-        for ((row, col) in getNeighbors(coords)) {
+    protected fun generateNeighbourCount(coords: Pair<Int, Int>) {
+        for ((row, col) in getNeighbours(coords)) {
             val neighbor = board[row][col]
-            board[row][col] = neighbor.copy(neighborBombs = neighbor.neighborBombs + 1)
+            board[row][col] = neighbor.copy(neighbourBombs = neighbor.neighbourBombs + 1)
         }
     }
 
-    private fun getNeighbors(coords: Pair<Int, Int>): List<Pair<Int, Int>> {
+    private fun getNeighbours(coords: Pair<Int, Int>): List<Pair<Int, Int>> {
         val (row, col) = coords
         val range = listOf(-1, 0, 1)
         val rows = range.map { (it + row).coerceIn(0, this.rows - 1) }.toSet()
         val cols = range.map { (it + col).coerceIn(0, this.cols - 1) }.toSet()
-        val neighbors = mutableListOf<Pair<Int, Int>>()
+        val neighbours = mutableListOf<Pair<Int, Int>>()
         for (x in rows) {
             for (y in cols) {
                 if (x == row && y == col) continue
-                val neighbor = board[x][y]
-                if (neighbor.state == CellState.UNSELECTED && !neighbor.isMine) {
-                    neighbors.add(neighbor.coord)
+                val neighbour = board[x][y]
+                if (neighbour.state == CellState.UNSELECTED && !neighbour.isMine) {
+                    neighbours.add(neighbour.coord)
                 }
             }
         }
-        return neighbors
+        return neighbours
     }
 
     open fun flagCell(coords: Pair<Int, Int>) {
@@ -77,7 +77,7 @@ abstract class Grid(
                 if (cell.isMine) {
                     false
                 } else {
-                    if (cell.neighborBombs == 0) {
+                    if (cell.neighbourBombs == 0) {
                         expandSelection(coords)
                     }
                     if (unselectedCount == mines) {
@@ -93,13 +93,13 @@ abstract class Grid(
     }
 
     private fun expandSelection(coords: Pair<Int, Int>) {
-        getNeighbors(coords).forEach { (r, c) ->
-            val neighbor = board[r][c]
-            if (neighbor.state == CellState.UNSELECTED && !neighbor.isMine) {
-                board[r][c] = neighbor.copy(state = CellState.SELECTED)
+        getNeighbours(coords).forEach { (r, c) ->
+            val neighbour = board[r][c]
+            if (neighbour.state == CellState.UNSELECTED && !neighbour.isMine) {
+                board[r][c] = neighbour.copy(state = CellState.SELECTED)
                 unselectedCount--
-                if (neighbor.neighborBombs == 0) {
-                    expandSelection(neighbor.coord)
+                if (neighbour.neighbourBombs == 0) {
+                    expandSelection(neighbour.coord)
                 }
             }
         }
