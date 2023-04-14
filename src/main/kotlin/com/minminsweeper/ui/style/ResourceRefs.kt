@@ -11,7 +11,9 @@ val windowPad = 15.dp
 val headerHeight = 30.dp
 const val BEVEL_STROKE_SMALL = 2.2f
 const val BEVEL_STROKE_LARGE = 3f
+val rulesWidth = headerHeight * 3
 val dialogSize = 350.dp
+val inputSize = 50.dp
 
 // Menu
 const val OPTIONS_MENU = "Options"
@@ -38,7 +40,7 @@ const val RIGHT_CLICK = "Flag/Unflag"
 const val LEFT_CLICK_DESCRIPTION = "Left mouse click animation"
 const val RIGHT_CLICK_DESCRIPTION = "Right mouse click animation"
 
-// TimeExceededDialog
+// TimeLimitDialog
 const val TIME_OUT = "Time has run out!"
 
 // ResetButton
