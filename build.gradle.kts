@@ -22,7 +22,7 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "com.minminsweeper.MainKt"
+        mainClass = "MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Msi, TargetFormat.Deb)

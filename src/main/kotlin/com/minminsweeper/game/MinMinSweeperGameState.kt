@@ -1,4 +1,4 @@
-package com.minminsweeper.ui
+package com.minminsweeper.game
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
