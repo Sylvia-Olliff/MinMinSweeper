@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.minminsweeper.game.GameState
 import com.minminsweeper.game.Level
+import com.minminsweeper.game.board.CellState
 import com.minminsweeper.game.board.GameGrid
 import com.minminsweeper.game.board.Grid
 import com.minminsweeper.ui.utils.Timer
@@ -26,6 +27,8 @@ class MinMinSweeperGameState(
 
     fun onLeftClick(coords: Pair<Int, Int>) {
         if (gamePaused) return
+        if ((gameCells.find { it.coord == coords })!!.state == CellState.SELECTED) return
+
         if (timer.seconds == 0) timer.start()
         if (grid.selectCell(coords)) {
             if (isGameWon) {
@@ -41,17 +44,11 @@ class MinMinSweeperGameState(
 
     fun onRightClick(coords: Pair<Int, Int>) {
         if (gamePaused) return
+        if ((gameCells.find { it.coord == coords })!!.state == CellState.SELECTED) return
+
         if (timer.seconds == 0) timer.start()
         grid.flagCell(coords)
         gameCells = grid.cells
-    }
-
-    fun pauseGame() {
-        timer.pause()
-    }
-
-    fun unPauseGame() {
-        timer.restart()
     }
 
     fun resetBoard() {

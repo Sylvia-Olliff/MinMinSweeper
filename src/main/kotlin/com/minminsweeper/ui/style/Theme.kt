@@ -29,9 +29,24 @@ private val LighterGray = Color(0xff757575)
 private val Gray = Color(0xff424242)
 private val DarkerGray = Color(0xff212121)
 
+enum class COLORS {
+    YELLOW, BLUE, GREEN, RED, PURPLE, ORANGE
+}
+
 object NumberColors {
-    val colors = listOf(
-        MinMinSweeperYellow, MinMinSweeperBlue, MinMinSweeperGreen, MinMinSweeperRed, MinMinSweeperPurple, MinMinSweeperOrange
+    val colorMap = mapOf(
+        COLORS.YELLOW to MinMinSweeperYellow,
+        COLORS.BLUE to MinMinSweeperBlue,
+        COLORS.GREEN to MinMinSweeperGreen,
+        COLORS.RED to MinMinSweeperRed,
+        COLORS.PURPLE to MinMinSweeperPurple,
+        COLORS.ORANGE to MinMinSweeperOrange,
+        1 to MinMinSweeperYellow,
+        2 to MinMinSweeperBlue,
+        3 to MinMinSweeperGreen,
+        4 to MinMinSweeperRed,
+        5 to MinMinSweeperPurple,
+        6 to MinMinSweeperOrange
     )
 }
 
@@ -49,7 +64,7 @@ val MinMinSweeperColors = darkColorScheme(
 
 private val MinMinSweeperTypography = Typography(
     titleSmall = TextStyle(
-        fontSize = 15.sp,
+        fontSize = 19.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = FontFamily.Monospace,
         letterSpacing = .5.sp,
@@ -57,7 +72,7 @@ private val MinMinSweeperTypography = Typography(
     ),
     labelSmall = TextStyle(
         color = MinMinSweeperColors.onSurface,
-        fontSize = 12.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
         fontFamily = FontFamily.Monospace,
         letterSpacing = .5.sp,

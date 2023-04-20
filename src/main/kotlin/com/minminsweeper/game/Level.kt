@@ -10,8 +10,8 @@ enum class Level(val values: List<Int>, val timeLimit: Int) {
     EXPERT(listOf(16, 30, 99), 60 * 20);
 
     companion object {
-        fun calcWindowWidth(columns: Int) = (columns * cellSize.value).dp + 46.dp
-        fun calcWindowHeight(rows: Int) = (rows * cellSize.value).dp + 157.dp
+        fun calcWindowWidth(columns: Int) = (columns * cellSize.value).dp + 45.dp
+        fun calcWindowHeight(rows: Int) = (rows * cellSize.value).dp + 155.dp
     }
 
     fun windowWidth(): Dp = calcWindowWidth(values[1])

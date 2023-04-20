@@ -96,7 +96,7 @@ internal fun MMSCell(
                     0 -> {}
                     else -> Text(
                         text = cell.neighbourBombs.toString(),
-                        color = NumberColors.colors[cell.neighbourBombs % 6],
+                        color = NumberColors.colorMap[cell.neighbourBombs % 6]!!,
                         textAlign = TextAlign.Center,
                         lineHeight = 15.sp,
                         style = MaterialTheme.typography.titleSmall

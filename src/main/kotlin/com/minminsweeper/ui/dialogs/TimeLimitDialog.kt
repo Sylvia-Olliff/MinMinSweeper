@@ -49,7 +49,7 @@ private fun OutOfTimeError(
         OutlinedButton(
             onClick = { onCloseRequest() },
             modifier = Modifier.padding(smallPad),
-            border = BorderStroke(tinyPad, NumberColors.colors[1])
+            border = BorderStroke(tinyPad, NumberColors.colorMap[COLORS.BLUE]!!)
         ) {
             Text(text = START_GAME, style = MaterialTheme.typography.labelSmall)
         }

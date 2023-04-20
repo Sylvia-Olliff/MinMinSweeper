@@ -82,7 +82,7 @@ internal fun GameOptions(
                 selected = selected == null,
                 onClick = null,
                 colors = RadioButtonDefaults.colors(
-                    selectedColor = NumberColors.colors[1], //TODO: Rework the NumberColors object to a map rather than an list
+                    selectedColor = NumberColors.colorMap[COLORS.BLUE]!!,
                     unselectedColor = MinMinSweeperColors.onPrimary
                 )
             )
@@ -141,7 +141,7 @@ internal fun GameOptions(
                 },
                 modifier = Modifier.padding(smallPad),
                 enabled = selected != null || (rows.isValid(isHeight = true) && columns.isValid(isHeight = false) && mines.isValid(rows, columns)),
-                border = BorderStroke(tinyPad, NumberColors.colors[1])
+                border = BorderStroke(tinyPad, NumberColors.colorMap[COLORS.BLUE]!!)
             ) {
                 Text(text = START_GAME, style = MaterialTheme.typography.labelSmall)
             }
@@ -193,7 +193,7 @@ private fun OptionsRow(
             selected = isSelected,
             onClick = null,
             colors = RadioButtonDefaults.colors(
-                selectedColor = NumberColors.colors[1],
+                selectedColor = NumberColors.colorMap[COLORS.BLUE]!!,
                 unselectedColor = MinMinSweeperColors.onPrimary
             )
         )
