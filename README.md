@@ -1,2 +1,4 @@
 # MinMinSweeper
-A joint project with my girlfriend to recreate windows minesweeper but styled our way
+A joint project with my ex-girlfriend to recreate windows minesweeper but styled their way
+
+--ARCHIVED
